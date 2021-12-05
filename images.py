@@ -8,8 +8,10 @@ Created on Dec 04 2021
 # pip install --upgrade google-cloud-vision
 # pip install python-dotenv
 import os
+import json
 from dotenv import load_dotenv
 from google.cloud import vision
+import image_crawler
 
 load_dotenv(verbose=True)
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.getenv('GOOGLE_JSON')
@@ -86,10 +88,23 @@ def get_images(uris, num):
             print(uri)
             result.append(uri)
         i = i + 1
-    return uri
+    return result
+
+
+def response_images(user_input):
+    # user_input = user_input.replace(' ', '').lower()
+    # lst = image_crawler.image_crawler(user_input)
+    # print(user_input, lst)
+    # lst = get_images(lst, 0)
+    lst = []
+    print(lst)
+    return json.dumps(lst)
 
 
 
 # detect_faces_uri("https://d3hwaim9vs2gfj.cloudfront.net/263_20130718144847.jpg")
 
 # localize_objects_uri("https://d3hwaim9vs2gfj.cloudfront.net/263_20130718144847.jpg")
+
+
+# print(response_images("time square"))
