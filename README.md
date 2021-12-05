@@ -1,4 +1,4 @@
-# Macro for NAVER remainder vaccines
+# Every Place You Go - epyg-python-api
 
 ### Python Version
     - python 3.9
